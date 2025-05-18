@@ -21,6 +21,8 @@ export const registerUser = async (req, res) => {
       "INSERT INTO users (username, email, password) VALUES (?,?,?)",
       [username, email, hashedPassword]
     );
+
+    res.status(201).json({ message: "Kullanıcı başarıyla oluşturuldu." });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "sunucu hatası." });
@@ -48,7 +50,7 @@ export const loginUser = async (req, res) => {
       return res.status(401).json({ message: "şifre yanlış" });
     }
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-      expiresIn: 60 * 60,
+      expiresIn: "1h",
     });
 
     res.json({ message: "Giriş başarılı", token });

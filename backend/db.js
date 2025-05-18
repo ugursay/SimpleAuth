@@ -10,12 +10,4 @@ const db = await mysql.createConnection({
   database: process.env.DB_NAME,
 });
 
-// db.connect((err) => {
-//   if (err) {
-//     console.error("veritabanı bağlantı hatası;".err);
-//   } else {
-//     console.log("MySql veritabanına bağlanıldı");
-//   }
-// });
-
 export default db;
