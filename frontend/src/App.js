@@ -3,25 +3,45 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
+
 function App() {
+  const { user, logout } = useContext(AuthContext);
+
   return (
     <Router>
       <div className="min-h-screen flex flex-col bg-gray-100">
-        {/* Navbar */}
         <nav className="bg-white shadow-md py-4">
           <div className="container mx-auto flex justify-center space-x-10">
-            <Link
-              to="/login"
-              className="text-blue-600 font-semibold hover:text-blue-800 transition"
-            >
-              Giriş
-            </Link>
-            <Link
-              to="/register"
-              className="text-blue-600 font-semibold hover:text-blue-800 transition"
-            >
-              Kayıt Ol
-            </Link>
+            {user ? (
+              <div className="flex items-center space-x-4">
+                <span className="text-gray-700 font-medium">
+                  Hoş Geldin, {user.email}
+                </span>
+                <button
+                  onClick={logout}
+                  className="bg-red-500 text-white px-4 py-1"
+                >
+                  Çıkış Yap
+                </button>
+              </div>
+            ) : (
+              <div>
+                <Link
+                  to="/login"
+                  className="text-blue-600 font-semibold hover:text-blue-800 transition"
+                >
+                  Giriş
+                </Link>
+                <Link
+                  to="/register"
+                  className="text-blue-600 font-semibold hover:text-blue-800 transition"
+                >
+                  Kayıt Ol
+                </Link>
+              </div>
+            )}
           </div>
         </nav>
 

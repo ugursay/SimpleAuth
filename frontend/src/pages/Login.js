@@ -1,10 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+
+  const { login } = useContext(AuthContext);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -17,6 +21,7 @@ const Login = () => {
 
       setMessage(res.data.message);
       console.log("Token:", res.data.token);
+      login({ email, token: res.data.token });
     } catch (err) {
       setMessage(
         err.response?.data?.message || "Sunucudan bağımsız bir hata oluştu"
