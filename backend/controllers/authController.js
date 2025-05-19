@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { db } from "../db.js";
+import db from "../db.js";
 
 export const registerUser = async (req, res) => {
   const { username, email, password } = req.body;
@@ -21,7 +21,6 @@ export const registerUser = async (req, res) => {
       "INSERT INTO users (username, email, password) VALUES (?,?,?)",
       [username, email, hashedPassword]
     );
-
     res.status(201).json({ message: "Kullanıcı başarıyla oluşturuldu." });
   } catch (err) {
     console.error(err);

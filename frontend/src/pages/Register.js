@@ -22,9 +22,10 @@ const Register = () => {
       setEmail("");
       setPassword("");
     } catch (err) {
-      console.error(
+      setMessage(
         err.response?.data?.message || "Sunucudan bağımsız bir hata oluştu"
       );
+      console.error(err);
     }
   };
 

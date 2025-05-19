@@ -18,9 +18,10 @@ const Login = () => {
       setMessage(res.data.message);
       console.log("Token:", res.data.token);
     } catch (err) {
-      console.error(
+      setMessage(
         err.response?.data?.message || "Sunucudan bağımsız bir hata oluştu"
       );
+      console.error(err);
     }
   };
 
