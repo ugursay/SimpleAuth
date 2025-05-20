@@ -47,3 +47,40 @@ RESTful API
 👉 SimpleAuth – Kullanıcı Giriş Sistemi
 
 #ReactJS #Nodejs #Expressjs #JWT #Authentication #Backend #WebDevelopment #JavaScript #SimpleAuth #TailwindCSS #ReactRouter #RESTfulAPI #MySQL
+
+---
+
+📢 Hello Everyone!
+
+I'm excited to share my new project: SimpleAuth – a simple yet functional user authentication system. 🔐
+
+In this project, I focused on essential authentication processes like user registration, login, and JWT-based token verification. On the frontend, I implemented page navigation using React Router, and designed a clean, modern interface with Tailwind CSS. It’s a clear and educational project for those who want to understand the basics of authentication systems. 🧠💻
+
+Feel free to support with your comments and likes! I’ll be back with more advanced projects soon. 🚀
+
+🛠️ Features:
+
+✅ User registration (register)
+✅ User login
+✅ Secure token generation and verification with JWT
+✅ Password hashing with bcrypt
+✅ Sleek and minimal UI with Tailwind CSS
+✅ Page routing with React Router
+✅ Simple but effective backend architecture
+
+🔧 Technologies Used:
+
+Node.js
+Express.js
+MySQL
+bcrypt
+JWT (jsonwebtoken)
+React.js
+React Router
+Tailwind CSS
+RESTful API
+
+🔗 GitHub Link: https://github.com/ugursay/SimpleAuth
+👉 SimpleAuth – User Authentication System
+
+#ReactJS #Nodejs #Expressjs #JWT #Authentication #Backend #WebDevelopment #JavaScript #SimpleAuth #TailwindCSS #ReactRouter #RESTfulAPI #MySQL
